@@ -1,0 +1,59 @@
+{
+  "deploy": {
+    "frontend": {
+      "output": "frontend/build",
+      "type": "static",
+      "commands": [
+        "cd frontend",
+        "npm install",
+        "npm run build"
+      ]
+    },
+    "backend": {
+      "output": "backend",
+      "type": "dynamic",
+      "commands": [
+        "cd backend",
+        "npm install",
+        "export NODE_ENV=production && npm run compile"
+      ]
+    }
+  },
+  "develop": {
+    "frontend": {
+      "path": "frontend",
+      "port": 8080,
+      "startCommand": "npm start"
+    },
+    "backend": {
+      "path": "backend",
+      "port": 3333,
+      "startCommand": "npm run start-dev"
+    }
+  },
+  "entitlements": {
+    "InstantRemixing": true,
+    "InstantRemixingNativeNavigation": true,
+    "InstantRemixingNativeCancel": true,
+    "CustomMetadata": {
+      "enabled": true,
+      "metadata": {
+        "title": "Giveaway Dare"
+      }
+    }
+  },
+  "remixData": {
+    "coverMedia": "https://stream.mux.com/B3svJkeo8GcRNDQ9kJjDVmdxezhvd5lS3qE7X02PI01Tc.m3u8",
+    "description": "I dare you to do a backflip!",
+    "endDate": 1654452554,
+    "title": "Win a ticket for my show!"
+  },
+  "@@initialTransform": {
+    "remixData": {
+      "coverMedia": "",
+      "description": "",
+      "title": "",
+      "endDate": null
+    }
+  }
+}
